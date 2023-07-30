@@ -27,7 +27,7 @@ class Posts extends Component {
       .then((response) => {
         console.log(response.data);
         this.setState({
-          posts: response.data,
+          allData : response.data,
         });
       })
       .catch((error) => console.log(error));
@@ -35,23 +35,23 @@ class Posts extends Component {
 
   
 
-//   componentDidMount(){
-//     this.getData();
-//   }
+   componentDidMount(){
+     this.getData();
+   }
 
- onClickHandler = () => {
-        console.log("I clicked button....");
-        this.getData();
-  };
+//  onClickHandler = () => {
+//         console.log("I clicked button....");
+//         this.getData();
+//   };
  
   render() {
     console.log('came inside render')
     return (
       <div>
-         <button onClick={this.onClickHandler} className="btn btn-primary">
+         {/* <button onClick={this.onClickHandler} className="btn btn-primary">
           Get Data
-        </button> 
-       {/*  <h1 className="text-center">All Posts</h1>
+        </button>  */}
+         <h1 className="text-center">All Posts</h1>
         <table className="table table-bordered">
           <thead className="thead-dark">
             <tr>
@@ -60,9 +60,9 @@ class Posts extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.allData.map((post) => <Post data = {post}/>)}
+            {this.state.allData.map((post) => <Post datFeed = {post}/>)}
           </tbody>
-        </table> */}
+        </table> 
       </div>
     );
   };

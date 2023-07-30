@@ -1,5 +1,5 @@
-const Post = (props) => {
-    const { title, body } = props.data;
+const Post = (propsData) => {
+    const { title, body } = propsData.datFeed;
     return (
       <tr>
         <td>{title}</td>
